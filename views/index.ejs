@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+
+            form {
+                margin-bottom: 20px;
+            }
+
+            input[type='text'] {
+                padding: 8px;
+                width: 300px;
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+
+            .wrapper {
+                display: flex;
+                border: 1px solid green;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .section {
+                width: 50%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .section h2 {
+                font-size: 18px;
+                margin-top: 0;
+            }
+
+            .section ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            .section li {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                border-bottom: 1px solid #ccc;
+                padding: 5px 0;
+            }
+
+            .left {
+                border-right: 1px solid #ddd;
+            }
+
+            .right {
+                border-left: 1px solid #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="shortForm" action="link/short" method="POST">
+            <input type="text" name="link" id="link" placeholder="Enter a link to shorten" />
+            <button type="submit">Shorten</button>
+        </form>
+        <div class="wrapper">
+            <div class="section left">
+                <h2>Current Session</h2>
+                <ul id="links"></ul>
+            </div>
+            <div class="section right">
+                <h2>Last Results</h2>
+                <ul>
+                    <% for (var i = 0; i < links.length; i++) { %>
+                    <li><%= links[i].short %></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>
