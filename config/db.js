@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const DB_URL =
-    'mongodb+srv://solomonikandrey:123@cluster0.verutqr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+const link_db = process.env.DB_URL;
 
 const connectDb = () => {
     console.log('db connected');
-    return mongoose.connect(DB_URL);
+    return mongoose.connect(link_db);
 };
 
 module.exports = connectDb;

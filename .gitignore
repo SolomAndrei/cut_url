@@ -1,0 +1,10 @@
+.env
+log
+npm-debug.log*
+node_modules/
+dist/
+build/
+*.swp
+*.tmp
+.vscode/
+.idea/
