@@ -12,7 +12,7 @@ router.post('/short', async (req, res) => {
             return res.json(url);
         }
         const code = shortid.generate();
-        const shortUrl = `http://localhost:3000/links/${code}`;
+        const shortUrl = `${process.env.BASE_URL}/links/${code}`;
         url = new Link({
             code,
             source: link,
